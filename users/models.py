@@ -9,7 +9,7 @@ class UserManager(BaseUserManager):
         if not email:
             raise ValueError("Email обязателен")
         email = self.normalize_email(email)
-        extra_fields.setdefault('username', email)
+        extra_fields.setdefault("username", email)
         user = self.model(email=email, **extra_fields)
         user.set_password(password)
         user.save(using=self._db)
@@ -38,7 +38,7 @@ class User(AbstractUser):
     REQUIRED_FIELDS = ["first_name", "last_name", "phone"]
 
     class Meta:
-        ordering = ['-date_joined']
+        ordering = ["-date_joined"]
         verbose_name = "Пользователь"
         verbose_name_plural = "Пользователи"
 

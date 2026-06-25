@@ -12,6 +12,6 @@ class CustomUserAdmin(UserAdmin):
     fieldsets = UserAdmin.fieldsets + (
         (
             "Дополнительная информация",
-            {"fields": ("phone", "github_url", "avatar", "bio")},
+            {"fields": ("phone", "github_url", "avatar", "about")},
         ),
     )
